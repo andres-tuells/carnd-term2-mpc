@@ -32,7 +32,7 @@ In MPC.cpp line 246 is solved the equation that minimizes the cost fitting a 3rd
 ```cpp
 AD<double> f0 = coeffs[0] + coeffs[1] * x0 + coeffs[2] * CppAD::pow(x0, 2) + coeffs[3] * CppAD::pow(x0, 3);
 ```
-defines the curve to beminimized. 
+defines the curve to be minimized. 
 
 In:
 ```cpp
@@ -49,7 +49,7 @@ the equation is solved using the external numerical library IPOPT. This function
 ```
 
 ### Timesteps
-I chosed N=10 and dt = 0.1. That gives a time window of 1s with ten points to fit the trajectory. I tried other values like 20-0.05 and 5-0.2 but it seems 10-0.1 is good enough. Time windows cannot be too large because a simplified model losses precission.
+I chosed N=10 and dt = 0.1. That gives a time window of 1s with ten points to fit the trajectory. I tried other values like 20-0.05 and 5-0.2 but it seems 10-0.1 is good enough. Time windows cannot be too large because a simplified model like our losses precission with time.
 
 ### Latency
 Be set N=10 and dt=0.1 so every step is 100ms long. To take in account the latency of the actuators (they don't transmit the order inmediatly) I included in MPC.cpp:
